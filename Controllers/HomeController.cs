@@ -15,14 +15,14 @@ namespace md753815MIS4200spring.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "My MIS4200 description";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Email: md753815@ohio.edu";
 
             return View();
         }
