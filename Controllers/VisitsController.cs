@@ -49,7 +49,7 @@ namespace md753815MIS4200spring.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "visitId,description,visitDate,petId")] Visit visit)
+        public ActionResult Create([Bind(Include = "visitId,petId,description,visitDate")] Visit visit)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace md753815MIS4200spring.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "visitId,description,visitDate,petId")] Visit visit)
+        public ActionResult Edit([Bind(Include = "visitId,petId,description,visitDate")] Visit visit)
         {
             if (ModelState.IsValid)
             {
