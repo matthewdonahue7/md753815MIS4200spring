@@ -18,8 +18,8 @@ namespace md753815MIS4200spring.Controllers
         // GET: orderDetails
         public ActionResult Index()
         {
-            var orderDetails = db.OrderDetails.Include(o => o.Product);
-            return View(orderDetails.ToList());
+            var orderDetail = db.OrderDetail.Include(o => o.Product);
+            return View(orderDetail.ToList());
         }
 
         // GET: orderDetails/Details/5
@@ -29,7 +29,7 @@ namespace md753815MIS4200spring.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            orderDetail orderDetail = db.OrderDetails.Find(id);
+            orderDetail orderDetail = db.OrderDetail.Find(id);
             if (orderDetail == null)
             {
                 return HttpNotFound();
@@ -53,7 +53,7 @@ namespace md753815MIS4200spring.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.OrderDetails.Add(orderDetail);
+                db.OrderDetail.Add(orderDetail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -69,7 +69,7 @@ namespace md753815MIS4200spring.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            orderDetail orderDetail = db.OrderDetails.Find(id);
+            orderDetail orderDetail = db.OrderDetail.Find(id);
             if (orderDetail == null)
             {
                 return HttpNotFound();
@@ -102,7 +102,7 @@ namespace md753815MIS4200spring.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            orderDetail orderDetail = db.OrderDetails.Find(id);
+            orderDetail orderDetail = db.OrderDetail.Find(id);
             if (orderDetail == null)
             {
                 return HttpNotFound();
@@ -115,8 +115,8 @@ namespace md753815MIS4200spring.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            orderDetail orderDetail = db.OrderDetails.Find(id);
-            db.OrderDetails.Remove(orderDetail);
+            orderDetail orderDetail = db.OrderDetail.Find(id);
+            db.OrderDetail.Remove(orderDetail);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

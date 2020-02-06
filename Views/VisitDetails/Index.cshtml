@@ -1,0 +1,51 @@
+﻿@model IEnumerable<md753815MIS4200spring.Models.VisitDetail>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Visit.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.petId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Visit.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.petId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.visitDetailId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.visitDetailId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.visitDetailId })
+        </td>
+    </tr>
+}
+
+</table>
