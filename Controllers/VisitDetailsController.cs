@@ -18,8 +18,8 @@ namespace md753815MIS4200spring.Controllers
         // GET: VisitDetails
         public ActionResult Index()
         {
-            var visitDetail = db.visitDetail.Include(v => v.Visit);
-            return View(visitDetail.ToList());
+            var visitDetails = db.VisitDetails.Include(v => v.Visit);
+            return View(visitDetails.ToList());
         }
 
         // GET: VisitDetails/Details/5
@@ -29,7 +29,7 @@ namespace md753815MIS4200spring.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VisitDetail visitDetail = db.visitDetail.Find(id);
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
             if (visitDetail == null)
             {
                 return HttpNotFound();
@@ -49,11 +49,11 @@ namespace md753815MIS4200spring.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "visitDetailId,price,description,visitId,petId")] VisitDetail visitDetail)
+        public ActionResult Create([Bind(Include = "visitDetailId,price,description,petId,visitId")] VisitDetail visitDetail)
         {
             if (ModelState.IsValid)
             {
-                db.visitDetail.Add(visitDetail);
+                db.VisitDetails.Add(visitDetail);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -69,7 +69,7 @@ namespace md753815MIS4200spring.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VisitDetail visitDetail = db.visitDetail.Find(id);
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
             if (visitDetail == null)
             {
                 return HttpNotFound();
@@ -83,7 +83,7 @@ namespace md753815MIS4200spring.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "visitDetailId,price,description,visitId,petId")] VisitDetail visitDetail)
+        public ActionResult Edit([Bind(Include = "visitDetailId,price,description,petId,visitId")] VisitDetail visitDetail)
         {
             if (ModelState.IsValid)
             {
@@ -102,7 +102,7 @@ namespace md753815MIS4200spring.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            VisitDetail visitDetail = db.visitDetail.Find(id);
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
             if (visitDetail == null)
             {
                 return HttpNotFound();
@@ -115,8 +115,8 @@ namespace md753815MIS4200spring.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            VisitDetail visitDetail = db.visitDetail.Find(id);
-            db.visitDetail.Remove(visitDetail);
+            VisitDetail visitDetail = db.VisitDetails.Find(id);
+            db.VisitDetails.Remove(visitDetail);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

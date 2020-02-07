@@ -22,7 +22,7 @@ namespace md753815MIS4200spring.DAL
         public DbSet<Pets> Pets { get; set; }
         public DbSet<Visit> Visit { get; set; }
         public DbSet<Vets> Vets { get; set; }
-        public DbSet<VisitDetail> visitDetail { get; set; }
+
         public DbSet<customer> Customers { get; set; }
         public DbSet<Orders> Orders { get; set; }
         public DbSet<Product> Product { get; set; }
@@ -33,5 +33,7 @@ namespace md753815MIS4200spring.DAL
             base.OnModelCreating(modelBuilder);
 
         }
+
+        public System.Data.Entity.DbSet<md753815MIS4200spring.Models.VisitDetail> VisitDetails { get; set; }
     }
 }

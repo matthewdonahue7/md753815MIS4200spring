@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Visit Details</h2>
+<h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
@@ -32,18 +32,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.visitId, "visitId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("visitId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.visitId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
             @Html.LabelFor(model => model.petId, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.petId, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.petId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.visitId, "visitId", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("visitId", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.visitId, "", new { @class = "text-danger" })
             </div>
         </div>
 
