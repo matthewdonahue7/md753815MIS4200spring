@@ -12,6 +12,7 @@
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migration\MISContext";
             ContextKey = "md753815MIS4200spring";
+ 
         }
 
         protected override void Seed(md753815MIS4200spring.DAL.MIS4200Context context)

@@ -188,7 +188,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\MISContext\Configuration.cs" />
+    <Compile Include="Migration\MISContext\202002061758341_custom.cs" />
+    <Compile Include="Migration\MISContext\202002061758341_custom.designer.cs">
+      <DependentUpon>202002061758341_custom.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migration\MISContext\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\customer.cs" />
@@ -418,6 +421,11 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migration\MISContext\202002061758341_custom.resx">
+      <DependentUpon>202002061758341_custom.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
