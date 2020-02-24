@@ -12,7 +12,7 @@
 <p>
 
     <a href="#" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-pencil"></span> Pencil
+        <span class="glyphicon glyphicon-pencil"></span> Available Pets
     </a>
 </p>
 </p>
@@ -55,7 +55,7 @@
                 @Html.DisplayFor(modelItem => item.petSince)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.petId }) <span class="glyphicon glyphicon-pencil"></span>|
+                @Html.ActionLink("Edit", "Edit", new { id = item.petId }) <span class="glyphicon glyphicon-pencil"></span> |
                 @Html.ActionLink("Details", "Details", new { id = item.petId }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.petId })
             </td>

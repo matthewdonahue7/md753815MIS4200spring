@@ -40,7 +40,7 @@ namespace md753815MIS4200spring.Controllers
         // GET: Visits/Create
         public ActionResult Create()
         {
-            ViewBag.petId = new SelectList(db.Pets, "fullName", "firstName");
+            ViewBag.petId = new SelectList(db.Pets, "petId", "fullName");
             return View();
         }
 

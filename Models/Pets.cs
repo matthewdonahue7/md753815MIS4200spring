@@ -10,6 +10,7 @@ namespace md753815MIS4200spring.Models
     {
         [Key]
         public int petId { get; set; }
+        public string fullName { get { return lastName + ", " + firstName; } }
         [Display(Name = "First Name")]
         [Required(ErrorMessage = "Pet First Name is Required")]
         [StringLength(20)]
@@ -18,7 +19,7 @@ namespace md753815MIS4200spring.Models
         [Required(ErrorMessage = "Pet Last Name is Required")]
         [StringLength(20)]
         public string lastName { get; set; }
-        public string fullName { get { return lastName + ", " + firstName; } }
+       
 
         [Display(Name = "Prefered Email")]
         [Required(ErrorMessage = "A Valid Email Address is Required")]
