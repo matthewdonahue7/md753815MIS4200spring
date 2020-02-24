@@ -40,7 +40,7 @@ namespace md753815MIS4200spring.Controllers
         // GET: Visits/Create
         public ActionResult Create()
         {
-            ViewBag.petId = new SelectList(db.Pets, "petId", "firstName");
+            ViewBag.petId = new SelectList(db.Pets, "fullName", "firstName");
             return View();
         }
 
@@ -58,7 +58,7 @@ namespace md753815MIS4200spring.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.petId = new SelectList(db.Pets, "petId", "firstName", visit.petId);
+            ViewBag.petId = new SelectList(db.Pets, "fullName", "firstName", visit.petId);
             return View(visit);
         }
 
@@ -74,7 +74,7 @@ namespace md753815MIS4200spring.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.petId = new SelectList(db.Pets, "petId", "firstName", visit.petId);
+            ViewBag.petId = new SelectList(db.Pets, "fullName", "firstName", visit.petId);
             return View(visit);
         }
 

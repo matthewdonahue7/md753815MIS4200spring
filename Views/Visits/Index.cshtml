@@ -4,12 +4,19 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Visit History</h2>
+
 
 <p>
     @Html.ActionLink("Create New", "Create")
+
+<p>
+   
+    <a href="#" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-pencil"></span> Pencil
+    </a>
 </p>
-<table class="table">
+<table class="table table-bordered table-hover table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Pets.firstName)
@@ -23,23 +30,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pets.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.visitDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.visitId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.visitId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.visitId })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pets.firstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.visitDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.visitId }) <a span class="glyphicon glyphicon-pencil"></a>|
+                @Html.ActionLink("Details", "Details", new { id = item.visitId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.visitId })
+            </td>
+        </tr>
+    }
 
 </table>

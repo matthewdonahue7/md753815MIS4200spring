@@ -9,6 +9,7 @@
     {
         public Configuration()
         {
+            AutomaticMigrationDataLossAllowed = true;
             AutomaticMigrationsEnabled = true;
             MigrationsDirectory = @"Migration\MISContext";
             ContextKey = "md753815MIS4200spring";

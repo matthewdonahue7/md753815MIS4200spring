@@ -10,11 +10,21 @@ namespace md753815MIS4200spring.Models
     {
         [Key]
         public int visitId { get; set; }
-        public int petId { get; set; }
-        public string description { get; set; }
 
-        public DateTime visitDate { get; set; }
-        
+        public int petId { get; set; }
+        [Display(Name = "Description")]
+        [Required(ErrorMessage = "Description of Visit is Needed")]
+        [StringLength(50)]
+       public string description { get; set; }
+        [Display(Name = "Visit Date")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
+
+        public string visitDate { get; set; }
+       
+
+
+
         public virtual Pets Pets { get; set; }
 
     }
