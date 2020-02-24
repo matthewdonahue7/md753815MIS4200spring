@@ -12,9 +12,7 @@
 
 <p>
    
-    <a href="#" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-pencil"></span> Visits in our office
-    </a>
+
 </p>
 <table class="table table-bordered table-hover table-striped">
     <tr>
@@ -43,9 +41,9 @@
                 @Html.DisplayFor(modelItem => item.visitDate)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.visitId }) <a span class="glyphicon glyphicon-pencil"></a>|
+                @Html.ActionLink("Edit", "Edit", new { id = item.visitId }) <span class="glyphicon">&#x270f;</span>|
                 @Html.ActionLink("Details", "Details", new { id = item.visitId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.visitId })
+                @Html.ActionLink("Delete", "Delete", new { id = item.visitId }) <span class="glyphicon">&#xe020;</span>
             </td>
         </tr>
     }

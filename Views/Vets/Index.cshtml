@@ -11,8 +11,7 @@
 
 <p>
   
-    <a href="#" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-pencil"></span> Select a Vet
+
     </a>
 </p>
 </p>
@@ -49,9 +48,9 @@
                 @Html.DisplayFor(modelItem => item.phone)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.vetId }) <a span class="glyphicon glyphicon-pencil"></a> |
+                @Html.ActionLink("Edit", "Edit", new { id = item.vetId }) <span class="glyphicon">&#x270f;</span> |
                 @Html.ActionLink("Details", "Details", new { id = item.vetId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.vetId })
+                @Html.ActionLink("Delete", "Delete", new { id = item.vetId }) <span class="glyphicon">&#xe020;</span>
             </td>
         </tr>
     }

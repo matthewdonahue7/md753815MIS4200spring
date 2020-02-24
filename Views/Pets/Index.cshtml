@@ -11,10 +11,8 @@
 
 <p>
 
-    <a href="#" class="btn btn-info btn-lg">
-        <span class="glyphicon glyphicon-pencil"></span> Available Pets
-    </a>
-</p>
+
+
 </p>
 <table class="table table-bordered table-hover table-striped">
     <tr>
@@ -55,9 +53,9 @@
                 @Html.DisplayFor(modelItem => item.petSince)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.petId }) <a span class="glyphicon glyphicon-pencil"></a> |
+                @Html.ActionLink("Edit", "Edit", new { id = item.petId }) <span class="glyphicon">&#x270f;</span>|
                 @Html.ActionLink("Details", "Details", new { id = item.petId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.petId })
+                @Html.ActionLink("Delete", "Delete", new { id = item.petId }) 
             </td>
         </tr>
     }
